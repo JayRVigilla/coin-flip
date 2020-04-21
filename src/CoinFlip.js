@@ -5,6 +5,8 @@ function CoinFlip() {
     const [face, setFace] = useState("null");
     const [flipCount, setFlipCount] = useState(0);
     const [headCount, setHeadCount] = useState(0);
+    const [tailsCount, setTailsCount] = useState(0);
+
 
     function flip() {
         const coinFaces = ['heads', 'tails'];
@@ -14,7 +16,10 @@ function CoinFlip() {
 
         if (face === 'heads') {
             setHeadCount(headCount + 1)
+        } else {
+            setTailsCount(tailsCount + 1)
         }
+        // QUESTION: are we updating for THIS flip? or previous
         return face;
     }
 
@@ -28,7 +33,7 @@ function CoinFlip() {
 
             <p> Out of {flipCount} flips</p>
             <p>Heads came up {headCount} times</p>
-            <p>Tails came up {flipCount - headCount}</p>
+            <p>Tails came up {tailsCount}</p>
 
         </div>
     )
