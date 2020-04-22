@@ -14,13 +14,12 @@ function CoinFlip() {
         setFace(coinFaces[randoIdx])
         setFlipCount(flipCount + 1)
 
-        if (face === 'heads') {
+        if (randoIdx === 0) {
             setHeadCount(headCount + 1)
         } else {
             setTailsCount(tailsCount + 1)
         }
         // QUESTION: are we updating for THIS flip? or previous
-        return face;
     }
 
 
@@ -33,7 +32,7 @@ function CoinFlip() {
 
             <p> Out of {flipCount} flips</p>
             <p>Heads came up {headCount} times</p>
-            <p>Tails came up {tailsCount}</p>
+            <p>Tails came up {tailsCount} times</p>
 
         </div>
     )
